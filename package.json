@@ -1,0 +1,22 @@
+{
+  "name": "graphite-to-github",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A Firefox extension that opens Graphite pull request links directly on GitHub.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "lint": "web-ext lint --source-dir extension --warnings-as-errors",
+    "test": "node --test tests/*.test.mjs",
+    "build": "web-ext build --source-dir extension --artifacts-dir dist --filename graphite-to-github-{version}.xpi --overwrite-dest",
+    "sign": "web-ext sign --source-dir extension --artifacts-dir dist/signed --channel unlisted",
+    "source": "node scripts/package-source.mjs",
+    "start": "web-ext run --source-dir extension",
+    "check": "npm run lint && npm run build && npm test"
+  },
+  "devDependencies": {
+    "web-ext": "10.8.0"
+  }
+}

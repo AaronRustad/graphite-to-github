@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "regexSubstitution": "https://github.com/\\1/\\2/pull/\\3"
+      }
+    },
+    "condition": {
+      "regexFilter": "^https://app\\.graphite\\.com/github/pr/([A-Za-z0-9-]+)/([A-Za-z0-9_.-]+)/([1-9][0-9]*)(/[^?#]*)?(\\?[^#]*)?(#.*)?$",
+      "isUrlFilterCaseSensitive": true,
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
